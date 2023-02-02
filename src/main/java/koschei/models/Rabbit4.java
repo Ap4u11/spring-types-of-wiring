@@ -6,16 +6,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class Rabbit4 {
 
-    private final Duck5 duck;
+
+    @Autowired
+    private  Duck5 duck;
 
 
-    public Rabbit4(@Autowired Duck5 duck) {
-        this.duck = duck;
+    public Rabbit4( ) {
     }
     @Override
     public String toString() {
         return ", в зайце утка " + duck.toString();
     }
 
-
+    public void setDuck(Duck5 duck) {
+        this.duck = duck;
+    }
 }
